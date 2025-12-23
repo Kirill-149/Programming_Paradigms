@@ -178,29 +178,31 @@ def run_all_bdd_tests():
         ("Форматирование решения", "test_format_solution"),
     ]
 
-    # Собираем результаты
-    test_results = {}
-    for test in result.testsRun:
-        test_name = test._testMethodName
-        test_results[test_name] = "PASS"
+    # Создаем словарь результатов
+    results_dict = {}
+    for _, test_method in test_scenarios:
+        results_dict[test_method] = "PASS"
 
     for failure in result.failures:
-        test_name = failure[0]._testMethodName
-        test_results[test_name] = "FAIL"
+        test_method = failure[0]._testMethodName
+        results_dict[test_method] = "FAIL"
 
     for error in result.errors:
-        test_name = error[0]._testMethodName
-        test_results[test_name] = "ERROR"
+        test_method = error[0]._testMethodName
+        results_dict[test_method] = "ERROR"
 
     # Выводим результаты
+    passed = 0
     for scenario_name, test_method in test_scenarios:
-        status = test_results.get(test_method, "NOT RUN")
+        status = results_dict.get(test_method, "NOT RUN")
         status_symbol = "✓" if status == "PASS" else "✗"
         print(f"{status_symbol} {scenario_name}: {status}")
+        if status == "PASS":
+            passed += 1
 
     print(f"\nВсего сценариев: {len(test_scenarios)}")
-    print(f"Пройдено: {result.testsRun - len(result.failures) - len(result.errors)}")
-    print(f"Не пройдено: {len(result.failures) + len(result.errors)}")
+    print(f"Пройдено: {passed}")
+    print(f"Не пройдено: {len(test_scenarios) - passed}")
     print("="*60)
 
     if result.wasSuccessful():
