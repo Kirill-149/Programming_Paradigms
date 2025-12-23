@@ -1,0 +1,15 @@
+/home/kirill/Programming_Paradigms/DZ/bin/Debug/net8.0/PerformanceMonitor
+/home/kirill/Programming_Paradigms/DZ/bin/Debug/net8.0/PerformanceMonitor.deps.json
+/home/kirill/Programming_Paradigms/DZ/bin/Debug/net8.0/PerformanceMonitor.runtimeconfig.json
+/home/kirill/Programming_Paradigms/DZ/bin/Debug/net8.0/PerformanceMonitor.dll
+/home/kirill/Programming_Paradigms/DZ/bin/Debug/net8.0/PerformanceMonitor.pdb
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.GeneratedMSBuildEditorConfig.editorconfig
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.AssemblyInfoInputs.cache
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.AssemblyInfo.cs
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.csproj.CoreCompileInputs.cache
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.sourcelink.json
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.dll
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/refint/PerformanceMonitor.dll
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.pdb
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/PerformanceMonitor.genruntimeconfig.cache
+/home/kirill/Programming_Paradigms/DZ/obj/Debug/net8.0/ref/PerformanceMonitor.dll
