@@ -1,31 +1,25 @@
-from lab_python_oop.rectangle import Rectangle
+from .rectangle import Rectangle
+
 
 class Square(Rectangle):
-    """Класс квадрата (наследуется от прямоугольника)"""
+    """Класс квадрата"""
 
-    FIGURE_TYPE = "Квадрат"
+    name = "Квадрат"
 
-    def __init__(self, side, color):
+    def __init__(self, side: float, color: str):
         """
-        Конструктор квадрата
+        Инициализирует квадрат
 
         Args:
-            side: длина стороны
-            color: цвет в виде строки
+            side: Длина стороны квадрата
+            color: Цвет квадрата
         """
-        # Вызываем конструктор родительского класса (прямоугольника)
         super().__init__(side, side, color)
 
-    @property
-    def figure_type(self):
-        """Возвращает тип фигуры"""
-        return self.FIGURE_TYPE
-
-    def __repr__(self):
-        """Строковое представление квадрата"""
-        return "{}:\nСторона: {}\nЦвет: {}\nПлощадь: {:.2f}".format(
-            self.figure_type,
-            self.width,  # width и height одинаковы у квадрата
-            self.color.color,
-            self.square()
+    def __repr__(self) -> str:
+        return (
+            f"{self.get_name()}:\n"
+            f"  Сторона: {self.width}\n"
+            f"  Цвет: {self.color_figure.color}\n"
+            f"  Площадь: {self.square():.2f}"
         )

@@ -1,37 +1,32 @@
 import math
-from lab_python_oop.figure import Figure
-from lab_python_oop.color import Color
+from .figure import Figure
+from .color import FigureColor
+
 
 class Circle(Figure):
     """Класс круга"""
 
-    FIGURE_TYPE = "Круг"
+    name = "Круг"
 
-    def __init__(self, radius, color):
+    def __init__(self, radius: float, color: str):
         """
-        Конструктор круга
+        Инициализирует круг
 
         Args:
-            radius: радиус
-            color: цвет в виде строки
+            radius: Радиус круга
+            color: Цвет круга
         """
         self.radius = radius
-        self.color = Color(color)
+        self.color_figure = FigureColor(color)
 
-    @property
-    def figure_type(self):
-        """Возвращает тип фигуры"""
-        return self.FIGURE_TYPE
+    def square(self) -> float:
+        """Вычисляет площадь круга"""
+        return math.pi * (self.radius ** 2)
 
-    def square(self):
-        """Вычисление площади круга с использованием math.pi"""
-        return math.pi * self.radius ** 2
-
-    def __repr__(self):
-        """Строковое представление круга"""
-        return "{}:\nРадиус: {}\nЦвет: {}\nПлощадь: {:.2f}".format(
-            self.figure_type,
-            self.radius,
-            self.color.color,
-            self.square()
+    def __repr__(self) -> str:
+        return (
+            f"{self.get_name()}:\n"
+            f"  Радиус: {self.radius}\n"
+            f"  Цвет: {self.color_figure.color}\n"
+            f"  Площадь: {self.square():.2f}"
         )

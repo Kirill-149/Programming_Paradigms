@@ -1,39 +1,40 @@
-from lab_python_oop.figure import Figure
-from lab_python_oop.color import Color
+from .figure import Figure
+from .color import FigureColor
+
 
 class Rectangle(Figure):
     """Класс прямоугольника"""
 
-    FIGURE_TYPE = "Прямоугольник"
+    name = "Прямоугольник"
 
-    def __init__(self, width, height, color):
+    def __init__(self, width: float, height: float, color: str):
         """
-        Конструктор прямоугольника
+        Инициализирует прямоугольник
 
         Args:
-            width: ширина
-            height: высота
-            color: цвет в виде строки
+            width: Ширина прямоугольника
+            height: Высота прямоугольника
+            color: Цвет прямоугольника
         """
         self.width = width
         self.height = height
-        self.color = Color(color)
+        self.color_figure = FigureColor(color)
 
-    @property
-    def figure_type(self):
-        """Возвращает тип фигуры"""
-        return self.FIGURE_TYPE
-
-    def square(self):
-        """Вычисление площади прямоугольника"""
+    def square(self) -> float:
+        """Вычисляет площадь прямоугольника"""
         return self.width * self.height
 
-    def __repr__(self):
-        """Строковое представление прямоугольника"""
-        return "{}:\nШирина: {}\nВысота: {}\nЦвет: {}\nПлощадь: {:.2f}".format(
-            self.figure_type,
-            self.width,
-            self.height,
-            self.color.color,
-            self.square()
+    def __repr__(self) -> str:
+        return (
+            "{name}:\n"
+            "  Ширина: {width}\n"
+            "  Высота: {height}\n"
+            "  Цвет: {color}\n"
+            "  Площадь: {area:.2f}"
+        ).format(
+            name=self.get_name(),
+            width=self.width,
+            height=self.height,
+            color=self.color_figure.color,
+            area=self.square()
         )
